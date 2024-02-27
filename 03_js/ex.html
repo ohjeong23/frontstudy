@@ -5,30 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  
+
 <script>
-var me = {
-      name: '고길동',
-      age: 30,
-      isAlive: true,
-      hobbies: [
-        '여행',
-        '운동'
-      ],
-      home: {
-        address: '서울',
-        tel: '02-111-1111'
-      }
-    };
+  const fnPromise1 =(url) => {
+    return new Promise((resolve,reject)=>{
 
-var msg2 = '<ul>';
-  msg2 += '<li>이름:'+me['name']+'</li>';
-  msg2 += '<li>나이:'+ㅡㄷ[]
-  msg2 += '<li>cnal:';
-    for(var i =0;i<me[hobbies].len)
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET',url);
+      xhr.send();
+      xhr.addEventListener('load',()=>{
+        resolve(JSON.parse(xhr.responseText));
+      })
+      xhr.addEventListener('error',()=>{
+        reject(xhr.statusText);
+      })
+    });
 
+  }
+  fnPromise1('https://').then((resDate)=>{
+    console.log(resDate);
+  },(msg)=>{
+    console.log(msg);
+  });
+</script>
+<script>
+  const fnPromise2 =(method,url) =>{
+    return new Promise((resolve,reject)=>{
+      const xhr = new XMLHttpRequest();
+      xhr.open(method,url);
+      xhr.send();
+      xhr.addEventListener('load')
+    })
+  }
 </script>
 
+
 </body>
-</html>
+</html>>
